@@ -1,13 +1,3 @@
-# Backend Engineer - Technical Assessment
-Our tech teams are curious, driven, intelligent, pragmatic, collaborative and open-minded and you should be too.
-
-## Testing Goals
-We are testing your ability to rapidly prototype an application underpinned by good software engineering practises that demonstrate the skills for backend project. You will need to use your intellect, creativity, judgement and be comfortable making decisions to produce a solution. Your solution does not need to be a complete applications but should demonstrate you understand how to build software with good software engineering practises.
-
-You will have approximately 1 week to complete this task but can as much or as little time as you deem necessary to demonstrate your understanding of the problem, your range of skills and approach to problem solving.
-
-Some successful candidates have spent as little as 3 hours whilst others have used the full week because they've enjoyed exploring different ideas, technologies and approaches.
-
 ## The Task
 You are required to build a prototype healthcare API that could be used to provide patients care record to a healthcare application.
 
