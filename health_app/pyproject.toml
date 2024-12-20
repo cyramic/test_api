@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "health_api"
+version = "0.1.0"
+description = "API to interact with FHIR data"
+authors = ["Matthew Pugh <pughmds@cyram.org>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = {extras = ["standard"], version = "^0.115.6"}
+uvicorn = "^0.32.1"
+httpx = "^0.28.1"
+fhir-resources = "^7.1.0"
+celery = "^5.4.0"
+python-decouple = "^3.8"
+requests = "^2.32.3"
+python-multipart = "^0.0.20"
+fs = "^2.4.16"
+sqlalchemy = "^2.0.36"
+fhir = "^0.0.4"
+psycopg2-binary = "^2.9.10"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+isort = "^5.13.2"
+flake8 = "^7.1.1"
+black = "^24.10.0"
+pylint = "^3.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
