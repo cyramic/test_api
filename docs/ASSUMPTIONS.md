@@ -42,12 +42,9 @@ as was sent during a previous session. As such, there is the
 potential for duplicate records present, and it should be checked
 for before storing unnecessarily.
 
-## That if any part of an uploaded doesn't match the schema, it should be refused
-Generally, the idea of least permissability is the right thing to do.
-Potentially there may be some files with incorrect or malformed structures
-that will try to be uploaded, and these should be rejected in their entirety 
-even though most of the file may be fine.
-
-There are, obviously, more permissible ways to handle this kind of 
-data, but this should be discussed so that any risks surrounding 
-this would be mitigated
+## That pieces of the data should be individually rejected if they don't match a schema
+Generally, the idea of least permissability is the right thing to do. I took a middle
+ground track here in allowing data that matched the schema, but rejecting anything
+that didn't. A more strict way to do this could be to reject the entire file if there
+were a single issue found, but I assumed that individual pieces could be handled that 
+fit the schema, and anything that didn't match could be independently handled.

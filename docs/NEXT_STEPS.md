@@ -1,6 +1,13 @@
 # Next Steps
 Here are some next steps that could improve this initial prototype:
 
+## Securing API keys
+The key as it currently stands is set using environment variables, but this
+isn't the best way to store API keys. Really, this should be kept in something
+like a parameter store or a database where the keys could be more easily 
+secured and rotated by different means. I left it as an environment
+variable for ease of configuration on the prototype itself.
+
 ## Docker files to move to multi-stage
 The docker files could use multiple stages to minimise file size and therefore
 reduce cost and improve the speed of updating the services.
@@ -46,3 +53,23 @@ and production environments so changes can be quickly tested and rolled out in a
 continous manner. This could easily be done in something like Heroku, but could
 also be done using IaC to set up an environment on other cloud providers.
 
+## Linking data together
+I didn't spend much time setting up foreign relationships between the tables and the 
+complexity that would exist there. Not only that, but I'm sure there are more complexitites
+as the data is parsed. For instance, a patient could have a single id
+across different data sets, but may have different recorded names. This may need
+to be handled separately in a "patient name" database table or similar.  As such, there
+is a lot about the nuance of the FHIR data sets that I potentially don't know that would
+need to be considered that is not noted in the prototype as it stands. Not only that,
+but there are other issues that would need to be considered:
+
+* How to handle updates to the data (how to determine most recent record)
+* How to handle matching between different data sets. Could the same person have different
+IDs?
+* Can the same person have different recorded names in different records being sent?
+* How much validation do we need to do before saving the data?  For instance, if a patient has 
+new information come in, but their DOB is different, is this an update or a typo? At what point do
+we reject, and when do we bring into the system?
+
+There are many more considerations that I'd want to investigate further that I'm sure would
+come with greater familiarity with FHIR datasets.
